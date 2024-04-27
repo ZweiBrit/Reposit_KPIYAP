@@ -13,27 +13,19 @@ class Program
 {
     static void Main(string[] args)
     {
-        NOTE[] notes = new NOTE[8];
-
-        for (int i = 0; i < 8; i++)
+        NOTE[] notes = new NOTE[8]
         {
-            Console.WriteLine("Введите фамилию:");
-            notes[i].LastName = Console.ReadLine();
+            new NOTE { LastName = "Иванов", FirstName = "Иван", PhoneNumber = "1234567890", BirthDate = new int[] {1, 1, 1990} },
+            new NOTE { LastName = "Петров", FirstName = "Петр", PhoneNumber = "2345678901", BirthDate = new int[] {2, 2, 1991} },
+            new NOTE { LastName = "Сидоров", FirstName = "Сидор", PhoneNumber = "3456789012", BirthDate = new int[] {3, 3, 1992} },
+            new NOTE { LastName = "Кузнецов", FirstName = "Кузнец", PhoneNumber = "4567890123", BirthDate = new int[] {4, 4, 1993} },
+            new NOTE { LastName = "Смирнов", FirstName = "Смирн", PhoneNumber = "5678901234", BirthDate = new int[] {5, 5, 1994} },
+            new NOTE { LastName = "Васильев", FirstName = "Василий", PhoneNumber = "6789012345", BirthDate = new int[] {6, 6, 1995} },
+            new NOTE { LastName = "Зайцев", FirstName = "Заяц", PhoneNumber = "7890123456", BirthDate = new int[] {7, 7, 1996} },
+            new NOTE { LastName = "Медведев", FirstName = "Медведь", PhoneNumber = "8901234567", BirthDate = new int[] {8, 8, 1997} }
+        };
 
-            Console.WriteLine("Введите имя:");
-            notes[i].FirstName = Console.ReadLine();
-
-            Console.WriteLine("Введите номер телефона:");
-            notes[i].PhoneNumber = Console.ReadLine();
-
-            Console.WriteLine("Введите дату рождения (день, месяц, год):");
-            notes[i].BirthDate = new int[3];
-            for (int j = 0; j < 3; j++)
-            {
-                notes[i].BirthDate[j] = int.Parse(Console.ReadLine());
-            }
-        }
-
+        // Сортировка по трем первым цифрам номера телефона
         notes = notes.OrderBy(n => n.PhoneNumber.Substring(0, 3)).ToArray();
 
         Console.WriteLine("Введите фамилию для поиска:");
