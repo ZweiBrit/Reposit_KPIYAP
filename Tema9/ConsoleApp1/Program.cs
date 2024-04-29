@@ -6,6 +6,7 @@ interface Ix
     void IxF1();
 }
 
+
 interface Iy
 {
     void F0(double parameter);
@@ -59,8 +60,8 @@ class Program
     {
         TestClass obj = new TestClass();
 
-        obj.F0(4); 
-        ((Iz)obj).F0(4); 
+        obj.F0(4);
+        ((Iz)obj).F0(4);
 
         ((Ix)obj).IxF0(16);
         ((Ix)obj).IxF1();
